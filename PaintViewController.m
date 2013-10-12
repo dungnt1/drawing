@@ -38,7 +38,15 @@
                                                 [UIColor greenColor],
                                                 nil];
     
-    // set the delegate
+    // set drawing view
+    DrawingView *drawView = [[DrawingView alloc]initWithFrame:CGRectMake(0, 44, 1024, 704)];
+    if (self.drawingView.image != nil) {
+        drawView.image = self.drawingView.image;
+    }
+    self.drawingView = drawView;
+    
+    [self.view addSubview:drawView];
+    
     self.drawingView.delegate = self;
     
     // start with a black pen

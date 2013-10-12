@@ -22,7 +22,6 @@
 		40B0351D17FC7CA400F373FF /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B0351C17FC7CA300F373FF /* ColorCell.xib */; };
 		40EFFB0618079EC700351664 /* SPUserResizableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EFFB0518079EC700351664 /* SPUserResizableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		40EFFB0D1807A0B500351664 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EFFB0B1807A0B500351664 /* ImageViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		40EFFB0E1807A0B500351664 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40EFFB0C1807A0B500351664 /* ImageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +54,6 @@
 		40EFFB0518079EC700351664 /* SPUserResizableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUserResizableView.m; sourceTree = "<group>"; };
 		40EFFB0A1807A0B500351664 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		40EFFB0B1807A0B500351664 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
-		40EFFB0C1807A0B500351664 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +102,8 @@
 		4025DF7017F28A0200456E6D /* Draw */ = {
 			isa = PBXGroup;
 			children = (
+				40EFFB0A1807A0B500351664 /* ImageViewController.h */,
+				40EFFB0B1807A0B500351664 /* ImageViewController.m */,
 				40EFFB0418079EC700351664 /* SPUserResizableView.h */,
 				40EFFB0518079EC700351664 /* SPUserResizableView.m */,
 				4025DFA117F290B400456E6D /* DrawingTools.h */,
@@ -120,9 +120,6 @@
 				40B0351C17FC7CA300F373FF /* ColorCell.xib */,
 				4025DF7C17F28A0200456E6D /* Images.xcassets */,
 				4025DF7117F28A0200456E6D /* Supporting Files */,
-				40EFFB0A1807A0B500351664 /* ImageViewController.h */,
-				40EFFB0B1807A0B500351664 /* ImageViewController.m */,
-				40EFFB0C1807A0B500351664 /* ImageViewController.xib */,
 			);
 			path = Draw;
 			sourceTree = "<group>";
@@ -217,7 +214,6 @@
 				4025DF7D17F28A0200456E6D /* Images.xcassets in Resources */,
 				4025DF9D17F28A2000456E6D /* PaintViewController.xib in Resources */,
 				40B0351D17FC7CA400F373FF /* ColorCell.xib in Resources */,
-				40EFFB0E1807A0B500351664 /* ImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
