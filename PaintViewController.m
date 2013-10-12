@@ -9,6 +9,7 @@
 #import "PaintViewController.h"
 #import "DrawingView.h"
 #import "ColorCell.h"
+#import "ImageViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define kActionSheetColor       100
@@ -22,11 +23,13 @@
 @end
 
 @implementation PaintViewController
+-(void)viewWillAppear:(BOOL)animated{
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // set the color data
     colorData = [[NSArray alloc]initWithObjects:[UIColor blackColor],
                                                 [UIColor blueColor],
@@ -49,8 +52,7 @@
     UINib *cellNib = [UINib nibWithNibName:@"ColorCell" bundle:nil];
     [self.colorCollection registerNib:cellNib forCellWithReuseIdentifier:@"ColorCell"];
     
-//    UIPopoverController *selectColorBox = [[UIPopoverController alloc]initWithContentViewController: self.colorCollection];
-    
+   
 }
 - (void)didReceiveMemoryWarning
 {
@@ -71,7 +73,6 @@
     // Send drawed image to image view
     ImageViewController *imageView = [[ImageViewController alloc]initWithNibName:@"ImageViewController" bundle:nil];
     imageView.image = self.drawingView.image;
-    imageView.drawingView = self.drawingView;
     
     [self presentViewController:imageView animated:YES completion:nil];
 }

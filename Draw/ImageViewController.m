@@ -2,24 +2,17 @@
 //  ImageViewController.m
 //  Draw
 //
-//  Created by DungNT on 9/25/13.
+//  Created by DungNT on 10/11/13.
 //  Copyright (c) 2013 DungNT. All rights reserved.
 //
 
 #import "ImageViewController.h"
-#import "PaintViewController.h"
 
 @interface ImageViewController ()
 
 @end
 
 @implementation ImageViewController
-
-- (IBAction)backToDraw:(id)sender {
-    PaintViewController *paintView = [[PaintViewController alloc]initWithNibName:@"PaintViewController" bundle:nil];
-    paintView.drawingView = self.drawingView;
-    [self presentViewController:paintView animated:YES completion:nil];
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,13 +25,48 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
+    self.view = [[UIView alloc] initWithFrame:appFrame];
     
-    self.previewImageView.image = self.image;
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.frame = CGRectMake(0, 0, 100, 30);
+    [button addTarget:self action:@selector(backToDraw:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
+    CGRect imageFrame = CGRectMake(100, 200, 200, 200);
+    SPUserResizableView *imageResizableView = [[SPUserResizableView alloc] initWithFrame:imageFrame];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
+    imageResizableView.contentView = imageView;
+    imageResizableView.delegate = self;
+    [self.view addSubview:imageResizableView];
+    [imageView release]; [imageResizableView release];
     
-    self.previewImageView.hidden = NO;
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideEditingHandles)];
+    [gestureRecognizer setDelegate:self];
+    [self.view addGestureRecognizer:gestureRecognizer];
+    [gestureRecognizer release];
+}
+
+- (void)userResizableViewDidBeginEditing:(SPUserResizableView *)userResizableView {
+    [currentlyEditingView hideEditingHandles];
+    currentlyEditingView = userResizableView;
+}
+
+- (void)userResizableViewDidEndEditing:(SPUserResizableView *)userResizableView {
+    lastEditedView = userResizableView;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([currentlyEditingView hitTest:[touch locationInView:currentlyEditingView] withEvent:nil]) {
+        return NO;
+    }
+    return YES;
+}
+
+- (void)hideEditingHandles {
+    // We only want the gesture recognizer to end the editing session on the last
+    // edited view. We wouldn't want to dismiss an editing session in progress.
+    [lastEditedView hideEditingHandles];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,4 +75,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)backToDraw:(id)sender {
+    PaintViewController *paintView = [[PaintViewController alloc] initWithNibName:@"PaintViewController" bundle:nil];
+    paintView.drawingView = [[DrawingView alloc] initWithFrame:CGRectMake(0, 44, 1024, 704)];
+    paintView.drawingView.image = self.image;
+    [paintView.drawingView addimageToView];
+    [self presentViewController:paintView animated:YES completion:nil];
+    
+}
 @end

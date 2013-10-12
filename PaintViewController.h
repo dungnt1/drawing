@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ImageViewController.h"
-
-@class DrawingView;
+#import "DrawingView.h"
+//#import "ImageViewController.h"
 
 @interface PaintViewController : UIViewController
 

@@ -26,7 +26,6 @@
 @property (nonatomic, strong) NSMutableArray *pathArray;
 @property (nonatomic, strong) NSMutableArray *bufferArray;
 @property (nonatomic, strong) id<DrawingTool> currentTool;
-@property (nonatomic, strong) UIImage *image;
 @end
 
 #pragma mark -
@@ -43,7 +42,7 @@
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
-{
+{   
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self configure];
@@ -292,5 +291,12 @@
 }
 
 #endif
+
+
+-(void) addimageToView{
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
+    imageView.frame = CGRectMake(10, 10, 200, 200);
+    [self addSubview:imageView];
+}
 
 @end

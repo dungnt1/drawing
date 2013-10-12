@@ -14,30 +14,16 @@
 		4025DF7717F28A0200456E6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025DF7617F28A0200456E6D /* main.m */; };
 		4025DF7B17F28A0200456E6D /* I2MAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025DF7A17F28A0200456E6D /* I2MAppDelegate.m */; };
 		4025DF7D17F28A0200456E6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4025DF7C17F28A0200456E6D /* Images.xcassets */; };
-		4025DF8417F28A0200456E6D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4025DF8317F28A0200456E6D /* XCTest.framework */; };
-		4025DF8517F28A0200456E6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4025DF6A17F28A0200456E6D /* Foundation.framework */; };
-		4025DF8617F28A0200456E6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4025DF6E17F28A0200456E6D /* UIKit.framework */; };
-		4025DF8E17F28A0200456E6D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4025DF8C17F28A0200456E6D /* InfoPlist.strings */; };
-		4025DF9017F28A0200456E6D /* DrawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025DF8F17F28A0200456E6D /* DrawTests.m */; };
 		4025DF9C17F28A2000456E6D /* PaintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025DF9A17F28A2000456E6D /* PaintViewController.m */; };
 		4025DF9D17F28A2000456E6D /* PaintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4025DF9B17F28A2000456E6D /* PaintViewController.xib */; };
 		4025DFA017F28DBB00456E6D /* DrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025DF9F17F28DBB00456E6D /* DrawingView.m */; };
 		4025DFA317F290B400456E6D /* DrawingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025DFA217F290B400456E6D /* DrawingTools.m */; };
-		4025DFA717F29C6000456E6D /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025DFA517F29C6000456E6D /* ImageViewController.m */; };
-		4025DFA817F29C6000456E6D /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4025DFA617F29C6000456E6D /* ImageViewController.xib */; };
 		40B0351B17FC7C8200F373FF /* ColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B0351A17FC7C8200F373FF /* ColorCell.m */; };
 		40B0351D17FC7CA400F373FF /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B0351C17FC7CA300F373FF /* ColorCell.xib */; };
+		40EFFB0618079EC700351664 /* SPUserResizableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EFFB0518079EC700351664 /* SPUserResizableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		40EFFB0D1807A0B500351664 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EFFB0B1807A0B500351664 /* ImageViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		40EFFB0E1807A0B500351664 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40EFFB0C1807A0B500351664 /* ImageViewController.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4025DF8717F28A0200456E6D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4025DF5F17F28A0200456E6D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4025DF6617F28A0200456E6D;
-			remoteInfo = Draw;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4025DF6717F28A0200456E6D /* Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draw.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +37,6 @@
 		4025DF7917F28A0200456E6D /* I2MAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = I2MAppDelegate.h; sourceTree = "<group>"; };
 		4025DF7A17F28A0200456E6D /* I2MAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = I2MAppDelegate.m; sourceTree = "<group>"; };
 		4025DF7C17F28A0200456E6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4025DF8217F28A0200456E6D /* DrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4025DF8317F28A0200456E6D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4025DF8B17F28A0200456E6D /* DrawTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrawTests-Info.plist"; sourceTree = "<group>"; };
 		4025DF8D17F28A0200456E6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -63,12 +48,14 @@
 		4025DF9F17F28DBB00456E6D /* DrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawingView.m; path = Drawing/DrawingView.m; sourceTree = "<group>"; };
 		4025DFA117F290B400456E6D /* DrawingTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingTools.h; sourceTree = "<group>"; };
 		4025DFA217F290B400456E6D /* DrawingTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingTools.m; sourceTree = "<group>"; };
-		4025DFA417F29C6000456E6D /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
-		4025DFA517F29C6000456E6D /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
-		4025DFA617F29C6000456E6D /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 		40B0351917FC7C8200F373FF /* ColorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorCell.h; path = ../ColorCell.h; sourceTree = "<group>"; };
 		40B0351A17FC7C8200F373FF /* ColorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorCell.m; path = ../ColorCell.m; sourceTree = "<group>"; };
 		40B0351C17FC7CA300F373FF /* ColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
+		40EFFB0418079EC700351664 /* SPUserResizableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUserResizableView.h; sourceTree = "<group>"; };
+		40EFFB0518079EC700351664 /* SPUserResizableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUserResizableView.m; sourceTree = "<group>"; };
+		40EFFB0A1807A0B500351664 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		40EFFB0B1807A0B500351664 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		40EFFB0C1807A0B500351664 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,16 +66,6 @@
 				4025DF6D17F28A0200456E6D /* CoreGraphics.framework in Frameworks */,
 				4025DF6F17F28A0200456E6D /* UIKit.framework in Frameworks */,
 				4025DF6B17F28A0200456E6D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4025DF7F17F28A0200456E6D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4025DF8417F28A0200456E6D /* XCTest.framework in Frameworks */,
-				4025DF8617F28A0200456E6D /* UIKit.framework in Frameworks */,
-				4025DF8517F28A0200456E6D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				4025DF6717F28A0200456E6D /* Draw.app */,
-				4025DF8217F28A0200456E6D /* DrawTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +104,8 @@
 		4025DF7017F28A0200456E6D /* Draw */ = {
 			isa = PBXGroup;
 			children = (
+				40EFFB0418079EC700351664 /* SPUserResizableView.h */,
+				40EFFB0518079EC700351664 /* SPUserResizableView.m */,
 				4025DFA117F290B400456E6D /* DrawingTools.h */,
 				4025DFA217F290B400456E6D /* DrawingTools.m */,
 				4025DF9E17F28DBB00456E6D /* DrawingView.h */,
@@ -135,9 +113,6 @@
 				4025DF9917F28A2000456E6D /* PaintViewController.h */,
 				4025DF9A17F28A2000456E6D /* PaintViewController.m */,
 				4025DF9B17F28A2000456E6D /* PaintViewController.xib */,
-				4025DFA417F29C6000456E6D /* ImageViewController.h */,
-				4025DFA517F29C6000456E6D /* ImageViewController.m */,
-				4025DFA617F29C6000456E6D /* ImageViewController.xib */,
 				4025DF7917F28A0200456E6D /* I2MAppDelegate.h */,
 				4025DF7A17F28A0200456E6D /* I2MAppDelegate.m */,
 				40B0351917FC7C8200F373FF /* ColorCell.h */,
@@ -145,6 +120,9 @@
 				40B0351C17FC7CA300F373FF /* ColorCell.xib */,
 				4025DF7C17F28A0200456E6D /* Images.xcassets */,
 				4025DF7117F28A0200456E6D /* Supporting Files */,
+				40EFFB0A1807A0B500351664 /* ImageViewController.h */,
+				40EFFB0B1807A0B500351664 /* ImageViewController.m */,
+				40EFFB0C1807A0B500351664 /* ImageViewController.xib */,
 			);
 			path = Draw;
 			sourceTree = "<group>";
@@ -198,24 +176,6 @@
 			productReference = 4025DF6717F28A0200456E6D /* Draw.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4025DF8117F28A0200456E6D /* DrawTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4025DF9617F28A0200456E6D /* Build configuration list for PBXNativeTarget "DrawTests" */;
-			buildPhases = (
-				4025DF7E17F28A0200456E6D /* Sources */,
-				4025DF7F17F28A0200456E6D /* Frameworks */,
-				4025DF8017F28A0200456E6D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4025DF8817F28A0200456E6D /* PBXTargetDependency */,
-			);
-			name = DrawTests;
-			productName = DrawTests;
-			productReference = 4025DF8217F28A0200456E6D /* DrawTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,7 +204,6 @@
 			projectRoot = "";
 			targets = (
 				4025DF6617F28A0200456E6D /* Draw */,
-				4025DF8117F28A0200456E6D /* DrawTests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,17 +215,9 @@
 			files = (
 				4025DF7517F28A0200456E6D /* InfoPlist.strings in Resources */,
 				4025DF7D17F28A0200456E6D /* Images.xcassets in Resources */,
-				4025DFA817F29C6000456E6D /* ImageViewController.xib in Resources */,
 				4025DF9D17F28A2000456E6D /* PaintViewController.xib in Resources */,
 				40B0351D17FC7CA400F373FF /* ColorCell.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4025DF8017F28A0200456E6D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4025DF8E17F28A0200456E6D /* InfoPlist.strings in Resources */,
+				40EFFB0E1807A0B500351664 /* ImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,33 +228,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4025DFA717F29C6000456E6D /* ImageViewController.m in Sources */,
 				4025DF7717F28A0200456E6D /* main.m in Sources */,
 				4025DF9C17F28A2000456E6D /* PaintViewController.m in Sources */,
 				4025DF7B17F28A0200456E6D /* I2MAppDelegate.m in Sources */,
 				4025DFA017F28DBB00456E6D /* DrawingView.m in Sources */,
 				4025DFA317F290B400456E6D /* DrawingTools.m in Sources */,
 				40B0351B17FC7C8200F373FF /* ColorCell.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4025DF7E17F28A0200456E6D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4025DF9017F28A0200456E6D /* DrawTests.m in Sources */,
+				40EFFB0618079EC700351664 /* SPUserResizableView.m in Sources */,
+				40EFFB0D1807A0B500351664 /* ImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4025DF8817F28A0200456E6D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4025DF6617F28A0200456E6D /* Draw */;
-			targetProxy = 4025DF8717F28A0200456E6D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4025DF7317F28A0200456E6D /* InfoPlist.strings */ = {
@@ -427,48 +363,6 @@
 			};
 			name = Release;
 		};
-		4025DF9717F28A0200456E6D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Draw.app/Draw";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Draw/Draw-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DrawTests/DrawTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		4025DF9817F28A0200456E6D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Draw.app/Draw";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Draw/Draw-Prefix.pch";
-				INFOPLIST_FILE = "DrawTests/DrawTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -486,15 +380,6 @@
 			buildConfigurations = (
 				4025DF9417F28A0200456E6D /* Debug */,
 				4025DF9517F28A0200456E6D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4025DF9617F28A0200456E6D /* Build configuration list for PBXNativeTarget "DrawTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4025DF9717F28A0200456E6D /* Debug */,
-				4025DF9817F28A0200456E6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

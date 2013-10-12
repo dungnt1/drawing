@@ -30,7 +30,7 @@ typedef enum {
 @property (nonatomic, assign) CGFloat lineWidth;
 
 // get the current drawing
-@property (nonatomic, strong, readonly) UIImage *image;
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic, readonly) NSUInteger undoSteps;
 
 // erase all
@@ -42,6 +42,8 @@ typedef enum {
 
 - (BOOL)canRedo;
 - (void)redoLatestStep;
+
+-(void) addimageToView;
 
 @end
 

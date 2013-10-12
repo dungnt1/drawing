@@ -2,18 +2,20 @@
 //  ImageViewController.h
 //  Draw
 //
-//  Created by DungNT on 9/25/13.
+//  Created by DungNT on 10/11/13.
 //  Copyright (c) 2013 DungNT. All rights reserved.
 //
 
+#import "SPUserResizableView.h"
+#import "PaintViewController.h"
 #import <UIKit/UIKit.h>
-#import "DrawingView.h"
 
-@interface ImageViewController : UIViewController
+@interface ImageViewController : UIViewController <UIGestureRecognizerDelegate, SPUserResizableViewDelegate>{
+    SPUserResizableView *currentlyEditingView;
+    SPUserResizableView *lastEditedView;
+}
 
-@property (nonatomic, unsafe_unretained) IBOutlet UIImageView *previewImageView;
-@property (nonatomic, unsafe_unretained) IBOutlet UIImage *image;
-
-@property (nonatomic, strong) DrawingView *drawingView;
+@property (strong, nonatomic) UIImage *image;
+- (IBAction)backToDraw:(id)sender;
 
 @end
