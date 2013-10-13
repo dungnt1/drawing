@@ -50,6 +50,15 @@
     return self;
 }
 
+- (UIImage*) capture {
+    UIGraphicsBeginImageContext(self.bounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.layer renderInContext:context];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
+
 - (void)configure
 {
     // init the private arrays

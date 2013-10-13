@@ -87,7 +87,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     
 	CGContextAddPath(context, path);
     CGContextSetLineCap(context, kCGLineCapRound);
-    CGContextSetLineWidth(context, self.lineWidth*4);
+    CGContextSetLineWidth(context, self.lineWidth);
     CGContextSetBlendMode(context, kCGBlendModeClear);
     CGContextStrokePath(context);
 }

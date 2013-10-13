@@ -58,6 +58,7 @@
     
    
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -76,7 +77,8 @@
 {
     // Send drawed image to image view
     ImageViewController *imageView = [[ImageViewController alloc]initWithNibName:@"ImageViewController" bundle:nil];
-    imageView.image = self.drawingView.image;
+    UIImage *imageToSend = [self.drawingView capture];
+    imageView.image = imageToSend;
     
     [self presentViewController:imageView animated:YES completion:nil];
 }

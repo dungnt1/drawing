@@ -44,6 +44,8 @@ typedef enum {
 
 -(void) addimageToView;
 
+- (UIImage*) capture;
+
 @end
 
 #pragma mark -
