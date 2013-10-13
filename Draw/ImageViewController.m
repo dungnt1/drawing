@@ -34,7 +34,7 @@
     [self.view addSubview:button];
     
     CGRect imageFrame = CGRectMake(100, 200, 200, 200);
-    SPUserResizableView *imageResizableView = [[SPUserResizableView alloc] initWithFrame:imageFrame];
+    UserResizableView *imageResizableView = [[UserResizableView alloc] initWithFrame:imageFrame];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
     imageResizableView.contentView = imageView;
     imageResizableView.delegate = self;
@@ -47,12 +47,12 @@
     [gestureRecognizer release];
 }
 
-- (void)userResizableViewDidBeginEditing:(SPUserResizableView *)userResizableView {
+- (void)userResizableViewDidBeginEditing:(UserResizableView *)userResizableView {
     [currentlyEditingView hideEditingHandles];
     currentlyEditingView = userResizableView;
 }
 
-- (void)userResizableViewDidEndEditing:(SPUserResizableView *)userResizableView {
+- (void)userResizableViewDidEndEditing:(UserResizableView *)userResizableView {
     lastEditedView = userResizableView;
 }
 

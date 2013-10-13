@@ -10,12 +10,11 @@
 
 typedef enum {
     DrawingToolTypePen,
+    DrawingToolTypePencil,
+    DrawingToolTypeDust,
+    DrawingToolTypeEraser,
     DrawingToolTypeLine,
-    DrawingToolTypeRectagleStroke,
-    DrawingToolTypeRectagleFill,
-    DrawingToolTypeEllipseStroke,
-    DrawingToolTypeEllipseFill,
-    DrawingToolTypeEraser
+    DrawingToolTypeEllipse
 } DrawingToolType;
 
 @protocol DrawingViewDelegate, DrawingTool;

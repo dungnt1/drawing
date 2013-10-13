@@ -20,7 +20,7 @@
 		4025DFA317F290B400456E6D /* DrawingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025DFA217F290B400456E6D /* DrawingTools.m */; };
 		40B0351B17FC7C8200F373FF /* ColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B0351A17FC7C8200F373FF /* ColorCell.m */; };
 		40B0351D17FC7CA400F373FF /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B0351C17FC7CA300F373FF /* ColorCell.xib */; };
-		40EFFB0618079EC700351664 /* SPUserResizableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EFFB0518079EC700351664 /* SPUserResizableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		40EFFB0618079EC700351664 /* UserResizableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EFFB0518079EC700351664 /* UserResizableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		40EFFB0D1807A0B500351664 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EFFB0B1807A0B500351664 /* ImageViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -50,8 +50,8 @@
 		40B0351917FC7C8200F373FF /* ColorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorCell.h; path = ../ColorCell.h; sourceTree = "<group>"; };
 		40B0351A17FC7C8200F373FF /* ColorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorCell.m; path = ../ColorCell.m; sourceTree = "<group>"; };
 		40B0351C17FC7CA300F373FF /* ColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
-		40EFFB0418079EC700351664 /* SPUserResizableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUserResizableView.h; sourceTree = "<group>"; };
-		40EFFB0518079EC700351664 /* SPUserResizableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUserResizableView.m; sourceTree = "<group>"; };
+		40EFFB0418079EC700351664 /* UserResizableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserResizableView.h; sourceTree = "<group>"; };
+		40EFFB0518079EC700351664 /* UserResizableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserResizableView.m; sourceTree = "<group>"; };
 		40EFFB0A1807A0B500351664 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		40EFFB0B1807A0B500351664 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +104,8 @@
 			children = (
 				40EFFB0A1807A0B500351664 /* ImageViewController.h */,
 				40EFFB0B1807A0B500351664 /* ImageViewController.m */,
-				40EFFB0418079EC700351664 /* SPUserResizableView.h */,
-				40EFFB0518079EC700351664 /* SPUserResizableView.m */,
+				40EFFB0418079EC700351664 /* UserResizableView.h */,
+				40EFFB0518079EC700351664 /* UserResizableView.m */,
 				4025DFA117F290B400456E6D /* DrawingTools.h */,
 				4025DFA217F290B400456E6D /* DrawingTools.m */,
 				4025DF9E17F28DBB00456E6D /* DrawingView.h */,
@@ -230,7 +230,7 @@
 				4025DFA017F28DBB00456E6D /* DrawingView.m in Sources */,
 				4025DFA317F290B400456E6D /* DrawingTools.m in Sources */,
 				40B0351B17FC7C8200F373FF /* ColorCell.m in Sources */,
-				40EFFB0618079EC700351664 /* SPUserResizableView.m in Sources */,
+				40EFFB0618079EC700351664 /* UserResizableView.m in Sources */,
 				40EFFB0D1807A0B500351664 /* ImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

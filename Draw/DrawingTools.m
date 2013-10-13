@@ -87,9 +87,50 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     
 	CGContextAddPath(context, path);
     CGContextSetLineCap(context, kCGLineCapRound);
-    CGContextSetLineWidth(context, self.lineWidth);
+    CGContextSetLineWidth(context, self.lineWidth*4);
     CGContextSetBlendMode(context, kCGBlendModeClear);
     CGContextStrokePath(context);
+}
+
+@end
+
+#pragma mark - DrawingPencilTool
+
+@implementation DrawingPencilTool
+
+- (void)draw
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    
+    CGContextSetAlpha(context, 0.5);
+	CGContextAddPath(context, path);
+    CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineWidth(context, self.lineWidth);
+    CGContextSetStrokeColorWithColor(context, self.lineColor.CGColor);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGContextStrokePath(context);
+}
+
+@end
+
+#pragma mark - DrawingDustTool
+
+@implementation DrawingDustTool
+
+- (void)draw
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+	CGContextAddPath(context, path);
+    CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineWidth(context, self.lineWidth*3);
+    CGContextSetStrokeColorWithColor(context, self.lineColor.CGColor);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGContextStrokePath(context);
+    CGFloat dashes[] = { 1, 1 };
+
+    CGContextSetLineDash( context, 0.0, dashes, 2 );
 }
 
 @end
@@ -142,58 +183,58 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 }
 
 @end
-
-#pragma mark - DrawingRectangleTool
-
-@interface DrawingRectangleTool ()
-@property (nonatomic, assign) CGPoint firstPoint;
-@property (nonatomic, assign) CGPoint lastPoint;
-@end
-
-#pragma mark -
-
-@implementation DrawingRectangleTool
-
-@synthesize lineColor = _lineColor;
-@synthesize lineWidth = _lineWidth;
-
-- (void)setInitialPoint:(CGPoint)firstPoint
-{
-    self.firstPoint = firstPoint;
-}
-
-- (void)moveFromPoint:(CGPoint)startPoint toPoint:(CGPoint)endPoint
-{
-    self.lastPoint = endPoint;
-}
-
-- (void)draw
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // draw the rectangle
-    CGRect rectToFill = CGRectMake(self.firstPoint.x, self.firstPoint.y, self.lastPoint.x - self.firstPoint.x, self.lastPoint.y - self.firstPoint.y);
-    if (self.fill) {
-        CGContextSetFillColorWithColor(context, self.lineColor.CGColor);
-        CGContextFillRect(UIGraphicsGetCurrentContext(), rectToFill);
-        
-    } else {
-        CGContextSetStrokeColorWithColor(context, self.lineColor.CGColor);
-        CGContextSetLineWidth(context, self.lineWidth);
-        CGContextStrokeRect(UIGraphicsGetCurrentContext(), rectToFill);
-    }
-}
-
-- (void)dealloc
-{
-    self.lineColor = nil;
-#if !HAS_ARC
-    [super dealloc];
-#endif
-}
-
-@end
-
+//
+//#pragma mark - DrawingRectangleTool
+//
+//@interface DrawingRectangleTool ()
+//@property (nonatomic, assign) CGPoint firstPoint;
+//@property (nonatomic, assign) CGPoint lastPoint;
+//@end
+//
+//#pragma mark -
+//
+//@implementation DrawingRectangleTool
+//
+//@synthesize lineColor = _lineColor;
+//@synthesize lineWidth = _lineWidth;
+//
+//- (void)setInitialPoint:(CGPoint)firstPoint
+//{
+//    self.firstPoint = firstPoint;
+//}
+//
+//- (void)moveFromPoint:(CGPoint)startPoint toPoint:(CGPoint)endPoint
+//{
+//    self.lastPoint = endPoint;
+//}
+//
+//- (void)draw
+//{
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    
+//    // draw the rectangle
+//    CGRect rectToFill = CGRectMake(self.firstPoint.x, self.firstPoint.y, self.lastPoint.x - self.firstPoint.x, self.lastPoint.y - self.firstPoint.y);
+//    if (self.fill) {
+//        CGContextSetFillColorWithColor(context, self.lineColor.CGColor);
+//        CGContextFillRect(UIGraphicsGetCurrentContext(), rectToFill);
+//        
+//    } else {
+//        CGContextSetStrokeColorWithColor(context, self.lineColor.CGColor);
+//        CGContextSetLineWidth(context, self.lineWidth);
+//        CGContextStrokeRect(UIGraphicsGetCurrentContext(), rectToFill);
+//    }
+//}
+//
+//- (void)dealloc
+//{
+//    self.lineColor = nil;
+//#if !HAS_ARC
+//    [super dealloc];
+//#endif
+//}
+//
+//@end
+//
 #pragma mark - DrawingEllipseTool
 
 @interface DrawingEllipseTool ()

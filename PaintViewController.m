@@ -31,27 +31,23 @@
 {
     [super viewDidLoad];
     // set the color data
-    colorData = [[NSArray alloc]initWithObjects:[UIColor blackColor],
-                                                [UIColor blueColor],
-                                                [UIColor whiteColor],
-                                                [UIColor grayColor],
-                                                [UIColor greenColor],
-                                                nil];
+//    colorData = [[NSArray alloc]initWithObjects:[UIColor blackColor],
+//                                                [UIColor blueColor],
+//                                                [UIColor whiteColor],
+//                                                [UIColor grayColor],
+//                                                [UIColor greenColor],
+//                                                nil];
     
     // set drawing view
     DrawingView *drawView = [[DrawingView alloc]initWithFrame:CGRectMake(0, 44, 1024, 704)];
     if (self.drawingView.image != nil) {
-        drawView.image = self.drawingView.image;
+        [drawView setBackgroundColor:[UIColor colorWithPatternImage:self.drawingView.image]];
     }
     self.drawingView = drawView;
     
     [self.view addSubview:drawView];
     
-    self.drawingView.delegate = self;
-    
-    // start with a black pen
-    self.lineWidthSlider.value = self.drawingView.lineWidth;
-    
+    self.drawingView.delegate = self;        
     // init the drawingView with border
     self.drawingView.layer.borderColor = [[UIColor blackColor] CGColor];
     self.drawingView.layer.borderWidth = 3.0f;
@@ -83,6 +79,46 @@
     imageView.image = self.drawingView.image;
     
     [self presentViewController:imageView animated:YES completion:nil];
+}
+
+- (IBAction)changeTools:(id)sender {
+    switch (self.toolsSegmentedControl.selectedSegmentIndex) {
+        case 0:
+        {
+            self.drawingView.drawTool = DrawingToolTypePen;
+            self.colorButton.enabled = TRUE;
+        }
+            break;
+        case 1:
+        {
+            self.drawingView.drawTool = DrawingToolTypePencil;
+            self.colorButton.enabled = TRUE;
+        }
+            break;
+        case 2:
+        {
+            self.drawingView.drawTool = DrawingToolTypeLine;
+            self.colorButton.enabled = TRUE;
+        }
+            break;
+        case 3:
+        {
+            self.drawingView.drawTool = DrawingToolTypeEllipse;
+            self.colorButton.enabled = TRUE;
+        }
+            break;
+        case 4:
+        {
+            self.drawingView.drawTool = DrawingToolTypeEraser;
+            self.colorButton.enabled = TRUE;
+        }
+            break;
+    }
+}
+
+- (IBAction)changeWidth:(id)sender {
+    self.drawingView.lineWidth = self.widthChange.value;
+    [self.widthLabel setText:[NSString stringWithFormat:@"%d",(int)self.widthChange.value]];
 }
 
 - (IBAction)undo:(id)sender
@@ -122,57 +158,6 @@
     
     [actionSheet setTag:kActionSheetColor];
     [actionSheet showInView:self.view];
-}
-- (IBAction)penTool:(id)sender
-{
-    self.drawingView.drawTool = DrawingToolTypePen;
-    self.colorButton.enabled = TRUE;
-}
-
-- (IBAction)lineTool:(id)sender
-{
-    self.drawingView.drawTool = DrawingToolTypeLine;
-    self.colorButton.enabled = TRUE;
-}
-
-- (IBAction)rectFillTool:(id)sender
-{
-    self.drawingView.drawTool = DrawingToolTypeRectagleFill;
-    self.colorButton.enabled = TRUE;
-}
-
-- (IBAction)rectStrokeTool:(id)sender
-{
-    self.drawingView.drawTool = DrawingToolTypeRectagleStroke;
-    self.colorButton.enabled = TRUE;
-}
-
-- (IBAction)elipFillTool:(id)sender
-{
-    self.drawingView.drawTool = DrawingToolTypeEllipseFill;
-    self.colorButton.enabled = TRUE;
-}
-
--(IBAction)elipStrokeTool:(id)sender{
-    self.drawingView.drawTool = DrawingToolTypeEllipseStroke;
-    self.colorButton.enabled = TRUE;
-}
-
--(IBAction)eraserTool:(id)sender{
-    self.drawingView.drawTool = DrawingToolTypeEraser;
-    self.colorButton.enabled = FALSE;
-}
-
-
-- (IBAction)toggleWidthSlider:(id)sender
-{
-    // toggle the slider
-    self.lineWidthSlider.hidden = !self.lineWidthSlider.hidden;}
-
-
-- (IBAction)widthChange:(UISlider *)sender
-{
-    self.drawingView.lineWidth = sender.value;
 }
 
 #pragma mark - UICollectionViewDataSource

@@ -12,7 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define kDefaultLineColor       [UIColor blackColor]
-#define kDefaultLineWidth       10.0f;
+#define kDefaultLineWidth       5.0f;
 
 // experimental code
 #define PARTIAL_REDRAW          0
@@ -78,7 +78,7 @@
 #endif
 }
 
-- (void)updateCacheImage:(BOOL)redraw
+- (void)updateCacheImage:(BOOL)redraw clear:(BOOL)clear
 {
     // init a context
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
@@ -98,6 +98,10 @@
         [self.currentTool draw];
     }
     
+    if (clear) {
+        [self setBackgroundColor:[UIColor whiteColor]];
+    }
+    
     // store the image
     self.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -111,42 +115,29 @@
             return AUTORELEASE([DrawingPenTool new]);
         }
             
-        case DrawingToolTypeLine:
+        case DrawingToolTypePencil:
         {
-            return AUTORELEASE([DrawingLineTool new]);
+            return AUTORELEASE([DrawingPencilTool new]);
         }
             
-        case DrawingToolTypeRectagleStroke:
+        case DrawingToolTypeDust:
         {
-            DrawingRectangleTool *tool = AUTORELEASE([DrawingRectangleTool new]);
-            tool.fill = NO;
-            return tool;
-        }
-            
-        case DrawingToolTypeRectagleFill:
-        {
-            DrawingRectangleTool *tool = AUTORELEASE([DrawingRectangleTool new]);
-            tool.fill = YES;
-            return tool;
-        }
-            
-        case DrawingToolTypeEllipseStroke:
-        {
-            DrawingEllipseTool *tool = AUTORELEASE([DrawingEllipseTool new]);
-            tool.fill = NO;
-            return tool;
-        }
-            
-        case DrawingToolTypeEllipseFill:
-        {
-            DrawingEllipseTool *tool = AUTORELEASE([DrawingEllipseTool new]);
-            tool.fill = YES;
-            return tool;
+            return AUTORELEASE([DrawingDustTool new]);
         }
             
         case DrawingToolTypeEraser:
         {
             return AUTORELEASE([DrawingEraserTool new]);
+        }
+            
+        case DrawingToolTypeLine:
+        {
+            return AUTORELEASE([DrawingLineTool new]);
+        }
+            
+        case DrawingToolTypeEllipse:
+        {
+            return AUTORELEASE([DrawingEllipseTool new]);
         }
     }
 }
@@ -208,7 +199,7 @@
     [self touchesMoved:touches withEvent:event];
     
     // update the image
-    [self updateCacheImage:NO];
+    [self updateCacheImage:NO clear:NO];
     
     // clear the current tool
     self.currentTool = nil;
@@ -235,7 +226,7 @@
 {
     [self.bufferArray removeAllObjects];
     [self.pathArray removeAllObjects];
-    [self updateCacheImage:YES];
+    [self updateCacheImage:YES clear:YES];
     [self setNeedsDisplay];
 }
 
@@ -258,7 +249,7 @@
         id<DrawingTool>tool = [self.pathArray lastObject];
         [self.bufferArray addObject:tool];
         [self.pathArray removeLastObject];
-        [self updateCacheImage:YES];
+        [self updateCacheImage:YES clear:NO];
         [self setNeedsDisplay];
     }
 }
@@ -274,7 +265,7 @@
         id<DrawingTool>tool = [self.bufferArray lastObject];
         [self.pathArray addObject:tool];
         [self.bufferArray removeLastObject];
-        [self updateCacheImage:YES];
+        [self updateCacheImage:YES clear:NO];
         [self setNeedsDisplay];
     }
 }

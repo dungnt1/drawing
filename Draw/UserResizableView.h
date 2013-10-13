@@ -1,38 +1,37 @@
 //
-//  SPUserResizableView.h
-//  SPUserResizableView
+//  UserResizableView.h
+//  Draw
 //
-//  Created by Stephen Poletto on 12/10/11.
+//  Created by DungNT on 10/11/13.
+//  Copyright (c) 2013 DungNT. All rights reserved.
 //
-//  SPUserResizableView is a user-resizable, user-repositionable
-//  UIView subclass.
 
 #import <Foundation/Foundation.h>
 
-typedef struct SPUserResizableViewAnchorPoint {
+typedef struct UserResizableViewAnchorPoint {
     CGFloat adjustsX;
     CGFloat adjustsY;
     CGFloat adjustsH;
     CGFloat adjustsW;
-} SPUserResizableViewAnchorPoint;
+} UserResizableViewAnchorPoint;
 
-@protocol SPUserResizableViewDelegate;
-@class SPGripViewBorderView;
+@protocol UserResizableViewDelegate;
+@class GripViewBorderView;
 
-@interface SPUserResizableView : UIView {
-    SPGripViewBorderView *borderView;
+@interface UserResizableView : UIView {
+    GripViewBorderView *borderView;
     UIView *contentView;
     CGPoint touchStart;
     CGFloat minWidth;
     CGFloat minHeight;
     
     // Used to determine which components of the bounds we'll be modifying, based upon where the user's touch started.
-    SPUserResizableViewAnchorPoint anchorPoint;
+    UserResizableViewAnchorPoint anchorPoint;
     
-    id <SPUserResizableViewDelegate> delegate;
+    id <UserResizableViewDelegate> delegate;
 }
 
-@property (nonatomic, assign) id <SPUserResizableViewDelegate> delegate;
+@property (nonatomic, assign) id <UserResizableViewDelegate> delegate;
 
 // Will be retained as a subview.
 @property (nonatomic, assign) UIView *contentView;
@@ -49,14 +48,14 @@ typedef struct SPUserResizableViewAnchorPoint {
 
 @end
 
-@protocol SPUserResizableViewDelegate <NSObject>
+@protocol UserResizableViewDelegate <NSObject>
 
 @optional
 
 // Called when the resizable view receives touchesBegan: and activates the editing handles.
-- (void)userResizableViewDidBeginEditing:(SPUserResizableView *)userResizableView;
+- (void)userResizableViewDidBeginEditing:(UserResizableView *)userResizableView;
 
 // Called when the resizable view receives touchesEnded: or touchesCancelled:
-- (void)userResizableViewDidEndEditing:(SPUserResizableView *)userResizableView;
+- (void)userResizableViewDidEndEditing:(UserResizableView *)userResizableView;
 
 @end

@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 DungNT. All rights reserved.
 //
 
-#import "SPUserResizableView.h"
+#import "UserResizableView.h"
 #import "PaintViewController.h"
 #import <UIKit/UIKit.h>
 
-@interface ImageViewController : UIViewController <UIGestureRecognizerDelegate, SPUserResizableViewDelegate>{
-    SPUserResizableView *currentlyEditingView;
-    SPUserResizableView *lastEditedView;
+@interface ImageViewController : UIViewController <UIGestureRecognizerDelegate, UserResizableViewDelegate>{
+    UserResizableView *currentlyEditingView;
+    UserResizableView *lastEditedView;
 }
 
 @property (strong, nonatomic) UIImage *image;

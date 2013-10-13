@@ -49,20 +49,32 @@
 
 #pragma mark -
 
+@interface DrawingPencilTool : DrawingPenTool
+
+@end
+
+#pragma mark -
+
+@interface DrawingDustTool : DrawingPenTool
+
+@end
+
+#pragma mark -
+
 @interface DrawingLineTool : NSObject<DrawingTool>
 
 @end
-
-#pragma mark -
-
-@interface DrawingRectangleTool : NSObject<DrawingTool>
-
-@property (nonatomic, assign) BOOL fill;
-
-@end
-
-#pragma mark -
-
+//
+//#pragma mark -
+//
+//@interface DrawingRectangleTool : NSObject<DrawingTool>
+//
+//@property (nonatomic, assign) BOOL fill;
+//
+//@end
+//
+//#pragma mark -
+//
 @interface DrawingEllipseTool : NSObject<DrawingTool>
 
 @property (nonatomic, assign) BOOL fill;
